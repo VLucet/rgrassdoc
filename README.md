@@ -11,7 +11,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://github.com/VLucet/rgrassdoc/workflows/R-CMD-check/badge.svg)](https://github.com/VLucet/rgrassdoc/actions)
 <!-- badges: end -->
 
-Are a user of `rgrass7`, the R interfacte to GRASS GIS? Do you find
+Are you a user of `rgrass7`, the R interfacte to GRASS GIS? Do you find
 yourself looking at the online GRASS manuals all the time? `rgrassdoc`
 provide two simple functions, `man` and `browse`, which allows you to
 visualize the GRASS GIS manual page for any GRASS module, right in the
