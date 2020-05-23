@@ -3,3 +3,4 @@
 ^LICENSE\.md$
 _old_
 ^codecov\.yml$
+^README\.Rmd$

@@ -7,7 +7,8 @@
 #' documentation (default to \code{tempdir()}).
 #' @param viewer (Character string) One of \code{"viewer"} or \code{"browser"}. The
 #' viewer in which to disply the documentation, default to
-#' \code{.Options$grass.viewer} (i.e. the 'Rstudio' pane).
+#' \code{.Options$grass.viewer} (i.e. the 'Rstudio' pane). \code{browse} is
+#' a wrapper around \code{man} with de default viewer set to the browser.
 #'
 #' @return
 #' This function does not return anything and is used for its side effects.
@@ -19,10 +20,10 @@
 #' man(r.reclass)
 #' the_module <- "v.overlay"
 #' man(the_module)
+#' browse(the_module)
 
 #'@export
-
-man <- function(module, dir=tempdir(), viewer=.Options$grass.viewer){
+man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
 
   # Allows NSE
   module <- tryCatch({
@@ -74,4 +75,12 @@ man <- function(module, dir=tempdir(), viewer=.Options$grass.viewer){
     stop("Viewer must be one of \"viewer\" and \"browser\"" )
 
   }
+}
+
+#'@rdname man
+#'@export
+browse <- function(module, viewer="browser", dir=tempdir()){
+
+  man(module = rlang::enexpr(module), viewer = viewer, dir = dir)
+
 }

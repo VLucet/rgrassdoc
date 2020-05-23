@@ -2,20 +2,24 @@
 % Please edit documentation in R/man.R
 \name{man}
 \alias{man}
+\alias{browse}
 \title{View a 'GRASS GIS' module manual page}
 \usage{
-man(module, dir = tempdir(), viewer = .Options$grass.viewer)
+man(module, viewer = .Options$grass.viewer, dir = tempdir())
+
+browse(module, viewer = "browser", dir = tempdir())
 }
 \arguments{
 \item{module}{(Character string, or simply the name of a 'GRASS GIS' module)
 The function supports non standard evaluation (i.e. \code{man(r.in.gdal)}).}
 
-\item{dir}{(Character string) The directory in which to store the cached
-documentation (default to \code{tempdir()}).}
-
 \item{viewer}{(Character string) One of \code{"viewer"} or \code{"browser"}. The
 viewer in which to disply the documentation, default to
-\code{.Options$grass.viewer} (i.e. the 'Rstudio' pane).}
+\code{.Options$grass.viewer} (i.e. the 'Rstudio' pane). \code{browse} is
+a wrapper around \code{man} with de default viewer set to the browser.}
+
+\item{dir}{(Character string) The directory in which to store the cached
+documentation (default to \code{tempdir()}).}
 }
 \value{
 This function does not return anything and is used for its side effects.
