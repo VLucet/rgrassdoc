@@ -16,12 +16,14 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' man("r.in.gdal")
 #' man(r.reclass)
 #' the_module <- "v.overlay"
 #' man(the_module)
 #' browse(the_module)
-
+#' }
+#'
 #'@export
 man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
 
