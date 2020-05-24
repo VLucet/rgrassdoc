@@ -45,3 +45,7 @@ You can also open the page in your browser with `browse`. Your browser will then
 ```{r cars, eval = FALSE}
 browse(v.overlay)
 ```
+
+Using the RStudio viewer pane, this is what you can expect to see:
+
+![Viewer Pane](man/figures/README-screenshot.png)

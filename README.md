@@ -43,3 +43,7 @@ will then of course support links to other pages of the manual:
 ``` r
 browse(v.overlay)
 ```
+
+Using the RStudio viewer pane, this is what you can expect to see:
+
+![Viewer Pane](man/figures/README-screenshot.png)
