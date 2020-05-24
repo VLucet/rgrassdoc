@@ -5,4 +5,4 @@ _old_
 ^codecov\.yml$
 ^README\.Rmd$
 ^\.github$
-man/figures
+images

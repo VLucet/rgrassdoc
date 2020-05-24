@@ -46,4 +46,4 @@ browse(v.overlay)
 
 Using the RStudio viewer pane, this is what you can expect to see:
 
-![Viewer Pane](man/figures/README-screenshot.png)
+![Viewer Pane](images/README-screenshot.png)
