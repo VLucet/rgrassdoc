@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rgrassdoc
+# rgrassdoc <img src="images/final_sticker.png" align="right" width=150/>
 
 <!-- badges: start -->
 
