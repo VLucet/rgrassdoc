@@ -13,7 +13,7 @@ status](https://github.com/VLucet/rgrassdoc/workflows/R-CMD-check/badge.svg)](ht
 
 Are you a user of `rgrass7`, the R interfacte to GRASS GIS? Do you find
 yourself looking at the online GRASS manuals all the time? `rgrassdoc`
-provide two simple functions, `man` and `browse`, which allows you to
+provide two simple functions, `man` and `browse`, which allow you to
 visualize the GRASS GIS manual page for any GRASS module, right in the
 RStudio Viewer pane (or to easily open the manual page in your browser).
 The goal is to fluidify your workflow when using `rgrass7`.
