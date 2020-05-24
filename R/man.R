@@ -55,7 +55,7 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
     if (!file.exists(file.path(dir, paste0(module, ".html")))){
 
       tryCatch({
-        hmtl <- xml2::download_html(url = paste0("https://grass.osgeo.org/grass", grass_version,
+        hmtl <- xml2::download_html(url = paste0("https://grass.osgeo.org/grass", grass_version*10,
                                                  "/manuals/", module, ".html"),
                                     file = file.path(dir, paste0(module, ".html")))
       }, error = function(e){
@@ -69,7 +69,7 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
     # Else, viewing in browser
   } else if (viewer == "browser"){
 
-    utils::browseURL(paste0("https://grass.osgeo.org/grass", grass_version,
+    utils::browseURL(paste0("https://grass.osgeo.org/grass", grass_version*10,
                             "/manuals/", module, ".html"))
 
   } else{

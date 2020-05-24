@@ -1,7 +1,7 @@
 Package: rgrassdoc
 Type: Package
 Title: Consult 'GRASS GIS' documentation in the RStudio viewer pane
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Valentin",
            family = "Lucet",

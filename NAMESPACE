@@ -2,3 +2,4 @@
 
 export(browse)
 export(man)
+export(man_version)
