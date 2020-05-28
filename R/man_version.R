@@ -1,4 +1,3 @@
-#'@export
 man_version <- function(version=NULL){
 
   if(is.null(version)){
