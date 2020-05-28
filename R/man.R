@@ -25,6 +25,8 @@
 #'@export
 man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
 
+  modules_data <- rgrassdoc::grassmodules78
+
   # Allows NSE
   module <- tryCatch({
     module <- !!module
@@ -46,10 +48,10 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
                         file = file.path(dir, "grass_logo.png"))
   }
 
-  if(!(module %in% grassmodules78$module)){
+  if(!(module %in% modules_data$module)){
 
     message(paste0("No manual entry exists for module <", module,">"))
-    matches <- agrep(pattern = module, x = grassmodules78$module, value = T)
+    matches <- agrep(pattern = module, x = modules_data$module, value = T)
 
     if (length(matches)==0){
       stop(paste0("No manual entry matching for module <", module,">"))
