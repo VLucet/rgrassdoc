@@ -13,8 +13,6 @@
 #' @return
 #' This function does not return anything and is used for its side effects.
 #'
-#' @export
-#'
 #' @examples
 #' \donttest{
 #' man("r.in.gdal")
@@ -48,25 +46,37 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
                         file = file.path(dir, "grass_logo.png"))
   }
 
-  # If viewing in rsudio pane
+  if(!(module %in% grassmodules78$module)){
+
+    message(paste0("No manual entry exists for module <", module,">"))
+    matches <- agrep(pattern = module, x = grassmodules78$module, value = T)
+    theend <- ifelse(length(matches)>5, 5, length(matches))
+
+    message(paste0("Did you mean: "))
+    message(paste0("   ",matches[1:theend]))
+    module <- matches[1]
+    message("Displaying module <", module,">")
+  }
+
+  # Check the cache for module file
+  if (!file.exists(file.path(dir, paste0(module, ".html")))){
+
+    tryCatch({
+      hmtl <- xml2::download_html(url = paste0("https://grass.osgeo.org/grass", grass_version*10,
+                                               "/manuals/", module, ".html"),
+                                  file = file.path(dir, paste0(module, ".html")))
+    }, error = function(e){
+
+      stop("Error downloading html documentation, check your internet connection")
+
+    })
+
+  }
+
   if (viewer == "viewer"){
 
-    # Check the cache for module file
-    if (!file.exists(file.path(dir, paste0(module, ".html")))){
+    rstudioapi::viewer(file.path(dir, paste0(module, ".html")))
 
-      tryCatch({
-        hmtl <- xml2::download_html(url = paste0("https://grass.osgeo.org/grass", grass_version*10,
-                                                 "/manuals/", module, ".html"),
-                                    file = file.path(dir, paste0(module, ".html")))
-      }, error = function(e){
-        stop(paste0("Error: no manual entry exists for module <", module,">"))
-      })
-
-    }
-
-    rstudioapi::viewer(file.path(tempdir(), paste0(module, ".html")))
-
-    # Else, viewing in browser
   } else if (viewer == "browser"){
 
     utils::browseURL(paste0("https://grass.osgeo.org/grass", grass_version*10,
