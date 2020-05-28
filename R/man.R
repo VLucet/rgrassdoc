@@ -50,6 +50,11 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
 
     message(paste0("No manual entry exists for module <", module,">"))
     matches <- agrep(pattern = module, x = grassmodules78$module, value = T)
+
+    if (length(matches)==0){
+      stop(paste0("No manual entry matching for module <", module,">"))
+    }
+
     theend <- ifelse(length(matches)>5, 5, length(matches))
 
     message(paste0("Did you mean: "))
