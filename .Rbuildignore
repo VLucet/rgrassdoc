@@ -6,3 +6,5 @@ _old_
 ^README\.Rmd$
 ^\.github$
 images
+^make_data\.R$
+^\.git$
