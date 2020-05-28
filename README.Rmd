@@ -35,12 +35,16 @@ devtools::install_github("vlucet/rgrassdoc")
 
 The `man` function supports non standard evaluation for even less typing and faster access to the information:
 
-```{r example, eval = FALSE}
+```{r example, eval = TRUE}
 library(rgrassdoc)
 
 man(r.in.gdal)
 ```
 
+`man` also supports partial matching:
+```{r partial, eval = TRUE}
+man(r.gdal)
+```
 You can also open the page in your browser with `browse`. Your browser will then of course support links to other pages of the manual:
 
 ```{r cars, eval = FALSE}

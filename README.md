@@ -34,8 +34,21 @@ and faster access to the information:
 
 ``` r
 library(rgrassdoc)
+#> GRASS GIS documentation - set to GRASS version 7.8
 
 man(r.in.gdal)
+#> NULL
+```
+
+`man` also supports partial matching:
+
+``` r
+man(r.gdal)
+#> No manual entry exists for module <r.gdal>
+#> Did you mean:
+#>    r.in.gdal   r.out.gdal
+#> Displaying module <r.in.gdal>
+#> NULL
 ```
 
 You can also open the page in your browser with `browse`. Your browser
