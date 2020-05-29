@@ -9,8 +9,9 @@ Authors@R:
            email = "valentin.lucet@gmail.com")
 Description: A tool for easy viewing of the documention for 'GRASS GIS' (see 
     <https://grass.osgeo.org/>). Pages of the 'GRASS GIS' manuals found at 
-    <https://grass.osgeo.org/grass78/manuals/> can be viewed within the Viewer 
-    pane of 'RStudio', or be opened in the user's default browser. 
+    <https://grass.osgeo.org/grass78/manuals/full_index.html> and at  
+    <https://grass.osgeo.org/grass78/manuals/addons/> can be viewed within the 
+    Viewer pane of 'RStudio', or be opened in the user's default browser. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -20,6 +21,7 @@ Imports:
     rstudioapi
 Suggests:
     rgrass7,
+    rvest,
     testthat,
     covr
 RoxygenNote: 7.1.0
