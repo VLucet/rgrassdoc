@@ -48,10 +48,11 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
                         file = file.path(dir, "grass_logo.png"))
   }
 
-  if(!(module %in% modules_data$module)){
+  # Proceed to partial matching
+  if(!(module %in% modules_data$name)){
 
     message(paste0("No manual entry exists for module <", module,">"))
-    matches <- agrep(pattern = module, x = modules_data$module, value = T)
+    matches <- agrep(pattern = module, x = modules_data$name, value = T)
 
     if (length(matches)==0){
       stop(paste0("No manual entry matching for module <", module,">"))
@@ -65,12 +66,24 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
     message("Displaying module <", module,">")
   }
 
+  # Verify if addon or not
+  module_idx <- which(module == grassmodules78$name)
+  if(modules_data$addon[module_idx]){
+
+    url_prefix <- "/manuals/addons/"
+
+  } else{
+
+    url_prefix <- "/manuals/"
+
+  }
+
   # Check the cache for module file
   if (!file.exists(file.path(dir, paste0(module, ".html")))){
 
     tryCatch({
       hmtl <- xml2::download_html(url = paste0("https://grass.osgeo.org/grass", grass_version*10,
-                                               "/manuals/", module, ".html"),
+                                               url_prefix, module, ".html"),
                                   file = file.path(dir, paste0(module, ".html")))
     }, error = function(e){
 
@@ -80,6 +93,7 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
 
   }
 
+  # Check viewer and display
   if (viewer == "viewer"){
 
     rstudioapi::viewer(file.path(dir, paste0(module, ".html")))
@@ -87,7 +101,7 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
   } else if (viewer == "browser"){
 
     utils::browseURL(paste0("https://grass.osgeo.org/grass", grass_version*10,
-                            "/manuals/", module, ".html"))
+                            url_prefix, module, ".html"))
 
   } else{
 

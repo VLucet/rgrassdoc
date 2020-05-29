@@ -5,8 +5,9 @@
 #'
 #' @format A data frame with 528 rows and 2 columns.
 #' \describe{
-#'   \item{module}{module name}
-#'   \item{description}{module description}
+#'   \item{name}{character, module name}
+#'   \item{description}{character, module description}
+#'   \item{addon}{logical, whether the module is an addon}
 #' }
 #' @source \url{https://grass.osgeo.org/grass78/manuals/full_index.html}
 "grassmodules78"
