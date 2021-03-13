@@ -36,7 +36,7 @@ and faster access to the information:
 
 ``` r
 library(rgrassdoc)
-#> GRASS GIS documentation - set to GRASS version 7.9
+#> GRASS GIS documentation - set to GRASS version 7.8
 
 man(r.in.gdal)
 #> NULL
