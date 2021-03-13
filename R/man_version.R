@@ -23,7 +23,8 @@ man_set_version <- function(version=7.8){
   } else {
 
     options(grass.version=version)
-    message(paste0("GRASS GIS documentation - set to GRASS version "))
+    message(paste0("GRASS GIS documentation - set to GRASS version ",
+                   .Options$grass.version))
   }
 
   return(invisible(man_get_version()))
