@@ -1,1 +1,4 @@
 url: https://vlucet.github.io/rgrassdoc
+template:
+  params:
+    bootswatch: flatly
