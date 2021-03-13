@@ -8,3 +8,6 @@ _old_
 images
 ^make_data\.R$
 ^\.git$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
