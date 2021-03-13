@@ -10,6 +10,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![license](https://img.shields.io/badge/license-MIT-yellow.svg)](https://choosealicense.com/)
 [![R build
 status](https://github.com/VLucet/rgrassdoc/workflows/R-CMD-check/badge.svg)](https://github.com/VLucet/rgrassdoc/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/VLucet/rgrassdoc/branch/master/graph/badge.svg)](https://codecov.io/gh/VLucet/rgrassdoc?branch=master)
 <!-- badges: end -->
 
 Are you a user of `rgrass7`, the R interfacte to GRASS GIS? Do you find
