@@ -1,7 +1,7 @@
 Package: rgrassdoc
 Type: Package
 Title: Consult 'Grass GIS' Documentation in the RStudio Viewer or your Browser
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: 
     person(given = "Valentin",
            family = "Lucet",
@@ -24,7 +24,7 @@ Suggests:
     rvest,
     testthat,
     covr
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Depends: 
     R (>= 2.10)
 URL: https://vlucet.github.io/rgrassdoc

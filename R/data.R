@@ -9,6 +9,7 @@
 #'   \item{description}{character, module description}
 #'   \item{addon}{logical, whether the module is an addon}
 #' }
+#'
 #' @source
 #' \url{https://grass.osgeo.org/grass78/manuals/full_index.html}
 #' \url{https://grass.osgeo.org/grass78/manuals/addons/}

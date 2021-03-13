@@ -2,13 +2,13 @@
 #'
 #'
 #' @param module (Character string, or simply the name of a 'GRASS GIS' module)
-#' The function supports non standard evaluation (i.e. \code{man(r.in.gdal)}).
+#'     The function supports non standard evaluation (i.e. \code{man(r.in.gdal)}).
 #' @param dir (Character string) The directory in which to store the cached
-#' documentation (default to \code{tempdir()}).
+#'     documentation (default to \code{tempdir()}).
 #' @param viewer (Character string) One of \code{"viewer"} or \code{"browser"}. The
-#' viewer in which to disply the documentation, default to
+#'     viewer in which to disply the documentation, default to
 #' \code{.Options$grass.viewer} (i.e. the 'Rstudio' pane). \code{browse} is
-#' a wrapper around \code{man} with de default viewer set to the browser.
+#'     a wrapper around \code{man} with de default viewer set to the browser.
 #'
 #' @return
 #' This function does not return anything and is used for its side effects.

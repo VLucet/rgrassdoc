@@ -2,3 +2,5 @@
 
 export(browse)
 export(man)
+export(man_get_version)
+export(man_set_version)

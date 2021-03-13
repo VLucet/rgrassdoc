@@ -14,9 +14,9 @@ browse(module, viewer = "browser", dir = tempdir())
 The function supports non standard evaluation (i.e. \code{man(r.in.gdal)}).}
 
 \item{viewer}{(Character string) One of \code{"viewer"} or \code{"browser"}. The
-viewer in which to disply the documentation, default to
+    viewer in which to disply the documentation, default to
 \code{.Options$grass.viewer} (i.e. the 'Rstudio' pane). \code{browse} is
-a wrapper around \code{man} with de default viewer set to the browser.}
+    a wrapper around \code{man} with de default viewer set to the browser.}
 
 \item{dir}{(Character string) The directory in which to store the cached
 documentation (default to \code{tempdir()}).}
