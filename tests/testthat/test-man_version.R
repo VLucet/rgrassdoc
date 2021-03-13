@@ -15,7 +15,7 @@ test_that("version can be changed", {
   man_set_version(7.8)
 })
 
-taht_that("error when incorrect version", {
+test_that("error when incorrect version", {
   expect_error(man_set_version(1),
                "version must be of the form: x.x (i.g 7.8)")
 })
