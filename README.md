@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rgrassdoc <img src="images/final_sticker.png" align="right" width=150/>
+# rgrassdoc <img src="man/figures/logo.png" align="right" width=150/>
 
 <!-- badges: start -->
 
@@ -34,7 +34,7 @@ and faster access to the information:
 
 ``` r
 library(rgrassdoc)
-#> GRASS GIS documentation - set to GRASS version 7.8
+#> GRASS GIS documentation - set to GRASS version 7.9
 
 man(r.in.gdal)
 #> NULL
