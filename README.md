@@ -5,7 +5,8 @@
 
 <!-- badges: start -->
 
-[![license](https://img.shields.io/badge/license-MIT-yellow.svg)](https://choosealicense.com/)
+[![License: GPL
+v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 [![R build
 status](https://github.com/VLucet/rgrassdoc/workflows/R-CMD-check/badge.svg)](https://github.com/VLucet/rgrassdoc/actions)
 [![Codecov test
@@ -37,6 +38,7 @@ library(rgrassdoc)
 #> ℹ GRASS GIS documentation - set to GRASS version 7.8
 
 man(r.in.gdal)
+#> ✓ Displaying module r.in.gdal in viewer
 #> Session is not interactive - viewer cannot be used
 ```
 
@@ -48,6 +50,7 @@ man(r.gdal)
 #> → Did you mean:
 #>    r.in.gdal
 #>    r.out.gdal
+#> ✓ Displaying module r.in.gdal in viewer
 #> Session is not interactive - viewer cannot be used
 ```
 
