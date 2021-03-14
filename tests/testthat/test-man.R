@@ -18,3 +18,23 @@ test_that("viewer option works as expected",{
   }
 }
 )
+
+test_that("browser option works as expected",{
+  the_module <- "r.in.gdal"
+  if (!interactive()){
+    expect_message(man(the_module, viewer = "browser"),
+                   "Session is not interactive - browser cannot be used")
+    expect_message(man("r.in.gdal", viewer = "browser"),
+                   "Session is not interactive - browser cannot be used")
+    expect_message(man(r.out.gdal, viewer = "browser"),
+                   "Session is not interactive - browser cannot be used")
+  } else {
+    expect_message(man(the_module, viewer = "browser"),
+                   "Displaying module")
+    expect_message(man("r.in.gdal", viewer = "browser"),
+                   "Displaying module")
+    expect_message(man(r.out.gdal, viewer = "browser"),
+                   "Displaying module")
+  }
+}
+)
