@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![license](https://img.shields.io/badge/license-MIT-yellow.svg)](https://choosealicense.com/)
 [![R build
 status](https://github.com/VLucet/rgrassdoc/workflows/R-CMD-check/badge.svg)](https://github.com/VLucet/rgrassdoc/actions)
@@ -36,11 +34,10 @@ and faster access to the information:
 
 ``` r
 library(rgrassdoc)
-#> GRASS GIS documentation - set to GRASS version 7.8
+#> ℹ GRASS GIS documentation - set to GRASS version 7.8
 
 man(r.in.gdal)
-#> ✓ Displaying module r.in.gdal in viewer
-#> NULL
+#> Session is not interactive - viewer cannot be used
 ```
 
 `man` also supports partial matching:
@@ -51,8 +48,7 @@ man(r.gdal)
 #> → Did you mean:
 #>    r.in.gdal
 #>    r.out.gdal
-#> ✓ Displaying module r.in.gdal in viewer
-#> NULL
+#> Session is not interactive - viewer cannot be used
 ```
 
 You can also open the page in your browser with `browse`. Your browser
