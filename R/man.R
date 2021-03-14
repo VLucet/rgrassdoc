@@ -60,6 +60,7 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
     if (length(matches)==0){
       cli::cli_alert_danger(paste0("No manual entry matching the index for module ",
                                    cli::col_green(module)))
+      stop("module not found", call. = FALSE)
     }
 
     theend <- ifelse(length(matches)>5, 5, length(matches))

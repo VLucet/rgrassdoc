@@ -16,6 +16,6 @@ test_that("man - NSE",{
 
 test_that("man - fails if incorrect module",{
   expect_error(man("incorrect.module"),
-               "No manual entry matching for module <incorrect.module>")
+               "module not found")
 }
 )
