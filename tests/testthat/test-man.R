@@ -22,6 +22,29 @@ test_that("viewer option works as expected",{
 }
 )
 
+test_that("matches options works as expected",{
+  the_module <- "r.in.g"
+  if (!interactive()){
+    # Object
+    expect_message(man(the_module),
+                   "Session is not interactive - viewer cannot be used")
+    # String
+    expect_message(man("r.in.g"),
+                   "Session is not interactive - viewer cannot be used")
+    # NSE
+    expect_message(man(r.in.g),
+                   "Session is not interactive - viewer cannot be used")
+  } else {
+    expect_message(man(the_module),
+                   "Displaying module")
+    expect_message(man("r.in.g"),
+                   "Displaying module")
+    expect_message(man(r.in.g),
+                   "Displaying module")
+  }
+}
+)
+
 test_that("browser option works as expected",{
   the_module <- "r.in.gdal"
   if (!interactive()){
