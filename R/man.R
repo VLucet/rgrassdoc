@@ -16,12 +16,9 @@
 #' This function does not return anything and is used for its side effects.
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' man("r.in.gdal")
-#' man(r.reclass)
-#' the_module <- "v.overlay"
-#' man(the_module)
-#' browse(the_module)
+#' browse(r.reclass)
 #' }
 #'
 #'@export

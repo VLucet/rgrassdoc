@@ -29,12 +29,9 @@ Visualize a 'GRASS GIS' module manual page either in the RStudio viewer
 pane or in your browser.
 }
 \examples{
-\donttest{
+\dontrun{
 man("r.in.gdal")
-man(r.reclass)
-the_module <- "v.overlay"
-man(the_module)
-browse(the_module)
+browse(r.reclass)
 }
 
 }
