@@ -1,5 +1,6 @@
 
 test_that("viewer option works as expected",{
+  skip_on_cran()
   the_module <- "r.in.gdal"
   if (!interactive()){
     # Object
@@ -23,6 +24,7 @@ test_that("viewer option works as expected",{
 )
 
 test_that("matches options works as expected",{
+  skip_on_cran()
 
   # Success
   the_module <- "r.in.g"
@@ -60,6 +62,8 @@ test_that("matches options works as expected",{
 )
 
 test_that("browser option works as expected",{
+  skip_on_cran()
+
   the_module <- "r.in.gdal"
   if (!interactive()){
     expect_message(man(the_module, viewer = "browser"),
@@ -80,6 +84,8 @@ test_that("browser option works as expected",{
 )
 
 test_that("viewer option works as expected - addon",{
+  skip_on_cran()
+
   the_module <- "g.cloud"
   if (!interactive()){
     expect_message(man(the_module),
@@ -100,6 +106,8 @@ test_that("viewer option works as expected - addon",{
 )
 
 test_that("browser option works as expected - addon",{
+  skip_on_cran()
+
   the_module <- "g.cloud"
   if (!interactive()){
     expect_message(man(the_module, viewer = "browser"),

@@ -4,6 +4,13 @@
 * Mac OS (on GitHub Actions), R 4.0.3
 * ubuntu 20.04 (on GitHub Actions), R 4.0.3 & devel
 
+## Comments
+
+For this package, the examples of the function man() are wrapped in dontrun{}, 
+and the tests are skipped on CRAN due to the fact that the package is meant
+to be ran interactively, because its main function is to use the Viewer pane 
+in RStudio (or a browser window).
+
 ## R CMD check results
 
   Maintainer: ‘Valentin Lucet <valentin.lucet@gmail.com>’
