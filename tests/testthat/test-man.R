@@ -33,15 +33,14 @@ test_that("browser option works as expected",{
                    "Session is not interactive - browser cannot be used")
   } else {
     expect_message(man(the_module, viewer = "browser"),
-                   "Displaying module")
+                   "Opening module")
     expect_message(man("r.in.gdal", viewer = "browser"),
-                   "Displaying module")
+                   "Opening module")
     expect_message(man(r.out.gdal, viewer = "browser"),
-                   "Displaying module")
+                   "Opening module")
   }
 }
 )
-
 
 test_that("viewer option works as expected - addon",{
   the_module <- "g.cloud"
@@ -74,11 +73,11 @@ test_that("browser option works as expected - addon",{
                    "Session is not interactive - browser cannot be used")
   } else {
     expect_message(man(the_module, viewer = "browser"),
-                   "Displaying module")
+                   "Opening module")
     expect_message(man("g.cloud", viewer = "browser"),
-                   "Displaying module")
+                   "Opening module")
     expect_message(man(g.cloud, viewer = "browser"),
-                   "Displaying module")
+                   "Opening module")
   }
 }
 )
