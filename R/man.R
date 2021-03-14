@@ -68,7 +68,7 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
   }
 
   # Verify if addon or not
-  module_idx <- which(module == grassmodules78$name)
+  module_idx <- which(module == modules_data$name)
   if(modules_data$addon[module_idx]){
 
     url_prefix <- "/manuals/addons/"
