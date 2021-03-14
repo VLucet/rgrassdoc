@@ -12,7 +12,7 @@ Description: A tool for easy viewing of the documentation of 'GRASS GIS' (see
     <https://grass.osgeo.org/grass78/manuals/full_index.html> and at  
     <https://grass.osgeo.org/grass78/manuals/addons/> can be viewed within the 
     Viewer pane of 'RStudio', or be opened in the user's default browser. 
-License: MIT + file LICENSE
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports:
