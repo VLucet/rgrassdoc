@@ -23,6 +23,8 @@ test_that("viewer option works as expected",{
 )
 
 test_that("matches options works as expected",{
+
+  # Success
   the_module <- "r.in.g"
   if (!interactive()){
     # Object
@@ -42,6 +44,18 @@ test_that("matches options works as expected",{
     expect_message(man(r.in.g),
                    "Displaying module")
   }
+
+  # Failure
+  the_module <- "xxx"
+  # Object
+  expect_error(man(the_module),
+               "module not found")
+  # String
+  expect_error(man("xxx"),
+               "module not found")
+  # NSE
+  expect_error(man(xxx),
+               "module not found")
 }
 )
 
