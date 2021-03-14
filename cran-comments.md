@@ -1,9 +1,8 @@
 ## Test environments
 * local R installation (on Pop Os 20.10), R 4.0.3
-* windows 10 (on GitHub Actions), R 4.0.3
+* windows 10 (on GitHub Actions), R 4.0.3 & devel
 * Mac OS (on GitHub Actions), R 4.0.3
-* ubuntu 20.04 (on GitHub Actions), R 4.0.3
-* ubuntu 20.04 (on GitHub Actions), devel
+* ubuntu 20.04 (on GitHub Actions), R 4.0.3 & devel
 
 ## R CMD check results
 
