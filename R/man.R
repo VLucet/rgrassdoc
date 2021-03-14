@@ -125,7 +125,7 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
 
   } else{
 
-    cli::cli_alert_danger("Arument 'viewer' must be one of 'viewer' OR 'browser'" )
+    cli::cli_alert_danger("Argument 'viewer' must be one of 'viewer' OR 'browser'" )
 
   }
 }

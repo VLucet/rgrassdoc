@@ -118,3 +118,8 @@ test_that("browser option works as expected - addon",{
   }
 }
 )
+
+test_that("fail on bad viewer argument", {
+  expect_message(man(r.in.gdal,viewer = "wrong_viewer"),
+                 "Argument 'viewer' must be one of 'viewer' OR 'browser'")
+})
