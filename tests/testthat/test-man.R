@@ -1,21 +1,20 @@
-test_that("man - external object",{
-  the_module <- "v.overlay"
-  expect_error(man(the_module), "RStudio not running")
-}
-)
 
-test_that("man - string",{
-  expect_error(man("r.in.gdal"), "RStudio not running")
-}
-)
-
-test_that("man - NSE",{
-  expect_error(man(r.out.gdal), "RStudio not running")
-}
-)
-
-test_that("man - fails if incorrect module",{
-  expect_error(man("incorrect.module"),
-               "module not found")
+test_that("viewer option works as expected",{
+  the_module <- "r.in.gdal"
+  if (!interactive()){
+    expect_message(man(the_module),
+                   "Session is not interactive - viewer cannot be used")
+    expect_message(man("r.in.gdal"),
+                   "Session is not interactive - viewer cannot be used")
+    expect_message(man(r.out.gdal),
+                   "Session is not interactive - viewer cannot be used")
+  } else {
+    expect_message(man(the_module),
+                   "Displaying module")
+    expect_message(man("r.in.gdal"),
+                   "Displaying module")
+    expect_message(man(r.out.gdal),
+                   "Displaying module")
+  }
 }
 )
