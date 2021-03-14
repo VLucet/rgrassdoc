@@ -105,8 +105,9 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
   # Check viewer and display
   if (viewer == "viewer"){
 
+    rgrassdoc_viewer_message(module)
+
     if (interactive()){
-      rgrassdoc_viewer_message(module)
       rstudioapi::viewer(file.path(dir, paste0(module, ".html")))
     } else {
       message("Session is not interactive - viewer cannot be used")
@@ -116,8 +117,10 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
     the_url <- rgrassdoc_make_url(grass_version = grass_version,
                                   url_prefix = url_prefix,
                                   module = module)
+
+    rgrassdoc_browser_message(module)
+
     if (interactive()){
-      rgrassdoc_browser_message(module)
       utils::browseURL(the_url)
     } else {
       message("Session is not interactive - browser cannot be used")
