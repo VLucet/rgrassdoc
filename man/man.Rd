@@ -25,7 +25,8 @@ documentation (default to \code{tempdir()}).}
 This function does not return anything and is used for its side effects.
 }
 \description{
-View a 'GRASS GIS' module manual page
+Visualize a 'GRASS GIS' module manual page either in the RStudio viewer
+pane or in your browser.
 }
 \examples{
 \donttest{

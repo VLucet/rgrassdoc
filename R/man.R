@@ -1,5 +1,7 @@
 #' View a 'GRASS GIS' module manual page
 #'
+#' Visualize a 'GRASS GIS' module manual page either in the RStudio viewer
+#' pane or in your browser.
 #'
 #' @param module (Character string, or simply the name of a 'GRASS GIS' module)
 #'     The function supports non standard evaluation (i.e. \code{man(r.in.gdal)}).
@@ -35,7 +37,7 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
   })
 
   # Get default grass version
-  grass_version <- .Options$grass.version
+  grass_version <- man_get_version()
 
   # Check the cache for css and logo files
   if (!file.exists(file.path(dir, "grassdocs.css"))){
@@ -51,19 +53,20 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
   # Proceed to partial matching
   if(!(module %in% modules_data$name)){
 
-    message(paste0("No manual entry exists for module <", module,">"))
+    cli::cli_alert_danger(paste0("No manual entry exists for module ",
+                                 cli::col_green(module)))
     matches <- agrep(pattern = module, x = modules_data$name, value = T)
 
     if (length(matches)==0){
-      stop(paste0("No manual entry matching for module <", module,">"))
+      cli::cli_alert_danger(paste0("No manual entry matching the index for module ",
+                                   cli::col_green(module)))
     }
 
     theend <- ifelse(length(matches)>5, 5, length(matches))
 
-    message(paste0("Did you mean: "))
-    message(paste0("   ",matches[1:theend]))
+    cli::cli_alert(paste0("Did you mean: "))
+    cli::cat_line(paste0("   ", cli::col_yellow(matches[1:theend])))
     module <- matches[1]
-    message("Displaying module <", module,">")
   }
 
   # Verify if addon or not
@@ -82,12 +85,17 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
   if (!file.exists(file.path(dir, paste0(module, ".html")))){
 
     tryCatch({
-      hmtl <- xml2::download_html(url = paste0("https://grass.osgeo.org/grass", grass_version*10,
-                                               url_prefix, module, ".html"),
+
+      the_url <- rgrassdoc_make_url(grass_version = grass_version,
+                                    url_prefix = url_prefix,
+                                    module = module)
+      hmtl <- xml2::download_html(url = the_url,
                                   file = file.path(dir, paste0(module, ".html")))
+
     }, error = function(e){
 
-      stop("Error downloading html documentation, check your internet connection")
+      cli::cli_alert_danger(paste0("Error downloading html documentation, ",
+                                   "check your internet connection"))
 
     })
 
@@ -96,16 +104,20 @@ man <- function(module, viewer=.Options$grass.viewer, dir=tempdir()){
   # Check viewer and display
   if (viewer == "viewer"){
 
+    rgrassdoc_viewer_message(module)
     rstudioapi::viewer(file.path(dir, paste0(module, ".html")))
 
   } else if (viewer == "browser"){
 
-    utils::browseURL(paste0("https://grass.osgeo.org/grass", grass_version*10,
-                            url_prefix, module, ".html"))
+    rgrassdoc_browser_message(module)
+    the_url <- rgrassdoc_make_url(grass_version = grass_version,
+                                  url_prefix = url_prefix,
+                                  module = module)
+    utils::browseURL(the_url)
 
   } else{
 
-    stop("Viewer must be one of \"viewer\" and \"browser\"" )
+    cli::cli_alert_danger("Viewer must be one of \"viewer\" and \"browser\"" )
 
   }
 }
@@ -117,3 +129,27 @@ browse <- function(module, viewer="browser", dir=tempdir()){
   man(module = rlang::enexpr(module), viewer = viewer, dir = dir)
 
 }
+
+# Helper functions
+# Construct the url
+rgrassdoc_make_url <- function(base = "https://grass.osgeo.org/grass",
+                               grass_version, url_prefix, module,
+                               end = ".html"){
+
+  url <- paste0(base, grass_version*10, url_prefix, module, end)
+
+  return(url)
+
+}
+
+# Contruct messages
+rgrassdoc_browser_message <- function(module){
+  cli::cli_alert_success(paste0("Opening module ", cli::col_green(module),
+                                " in browser"))
+}
+
+rgrassdoc_viewer_message <- function(module){
+  cli::cli_alert_success(paste0("Displaying module ", cli::col_green(module),
+                                " in viewer"))
+}
+

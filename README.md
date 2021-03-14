@@ -39,6 +39,7 @@ library(rgrassdoc)
 #> GRASS GIS documentation - set to GRASS version 7.8
 
 man(r.in.gdal)
+#> ✓ Displaying module r.in.gdal in viewer
 #> NULL
 ```
 
@@ -46,10 +47,11 @@ man(r.in.gdal)
 
 ``` r
 man(r.gdal)
-#> No manual entry exists for module <r.gdal>
-#> Did you mean:
-#>    r.in.gdal   r.out.gdal
-#> Displaying module <r.in.gdal>
+#> x No manual entry exists for module r.gdal
+#> → Did you mean:
+#>    r.in.gdal
+#>    r.out.gdal
+#> ✓ Displaying module r.in.gdal in viewer
 #> NULL
 ```
 

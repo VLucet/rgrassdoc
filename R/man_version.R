@@ -18,13 +18,13 @@ man_set_version <- function(version=7.8){
 
   if(version %% 1 == 0){
 
-    stop("version must be of the form: x.x (i.g 7.8)")
+    cli::cli_alert_danger("Version must be of the form: x.x (i.g 7.8)")
 
   } else {
 
     options(grass.version=version)
-    message(paste0("GRASS GIS documentation - set to GRASS version ",
-                   .Options$grass.version))
+    cli::cli_alert_info(paste0("GRASS GIS documentation - set to GRASS version ",
+                               cli::col_green(.Options$grass.version)))
   }
 
   return(invisible(man_get_version()))
