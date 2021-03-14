@@ -7,7 +7,7 @@ Authors@R: c(
            family = "Lucet",
            role = c("aut", "cre"),
            email = "valentin.lucet@gmail.com"))
-Description: A tool for easy viewing of the documention for 'GRASS GIS' (see 
+Description: A tool for easy viewing of the documentation of 'GRASS GIS' (see 
     <https://grass.osgeo.org/>). Pages of the 'GRASS GIS' manuals found at 
     <https://grass.osgeo.org/grass78/manuals/full_index.html> and at  
     <https://grass.osgeo.org/grass78/manuals/addons/> can be viewed within the 
