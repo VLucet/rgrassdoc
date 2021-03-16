@@ -28,7 +28,13 @@ Are you a user of `rgrass7`, the R interfacte to GRASS GIS? Do you find yourself
 
 ### Installation
 
-You can install from GitHub like so:
+Install from CRAN as such:
+
+``` r
+install.packages("rgrassdoc")
+```
+
+You can also install the dev version from GitHub like so:
 
 ``` r
 devtools::install_github("vlucet/rgrassdoc")

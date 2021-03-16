@@ -26,7 +26,13 @@ The goal is to fluidify your workflow when using `rgrass7`.
 
 ### Installation
 
-You can install from GitHub like so:
+Install from CRAN as such:
+
+``` r
+install.packages("rgrassdoc")
+```
+
+You can also install the dev version from GitHub like so:
 
 ``` r
 devtools::install_github("vlucet/rgrassdoc")
