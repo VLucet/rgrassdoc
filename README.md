@@ -11,6 +11,10 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/
 status](https://github.com/VLucet/rgrassdoc/workflows/R-CMD-check/badge.svg)](https://github.com/VLucet/rgrassdoc/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/VLucet/rgrassdoc/branch/master/graph/badge.svg)](https://codecov.io/gh/VLucet/rgrassdoc?branch=master)
+
+[![CRAN
+Version](https://img.shields.io/cran/v/rgrassdoc?label=CRAN)](https://CRAN.R-project.org/package=rgrassdoc)
+[![Downloads](https://cranlogs.r-pkg.org/badges/rgrassdoc?color=blue)](https://CRAN.R-project.org/package=rgrassdoc/)
 <!-- badges: end -->
 
 Are you a user of `rgrass7`, the R interfacte to GRASS GIS? Do you find
