@@ -88,15 +88,18 @@
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h3>
-<p>You can install from GitHub like so:</p>
+<p>Install from CRAN as such:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"rgrassdoc"</span><span class="op">)</span></code></pre></div>
+<p>You can also install the dev version from GitHub like so:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"vlucet/rgrassdoc"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="example" class="section level3">
 <h3 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h3>
 <p>The <code>man</code> function supports non standard evaluation for even less typing and faster access to the information:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://vlucet.github.io/rgrassdoc/">rgrassdoc</a></span><span class="op">)</span>
 <span class="co">#&gt; ℹ GRASS GIS documentation - set to GRASS version 7.8</span>
 
@@ -104,7 +107,7 @@
 <span class="co">#&gt; ✓ Displaying module r.in.gdal in viewer</span>
 <span class="co">#&gt; Session is not interactive - viewer cannot be used</span></code></pre></div>
 <p><code>man</code> also supports partial matching:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/man.html">man</a></span><span class="op">(</span><span class="va">r.gdal</span><span class="op">)</span>
 <span class="co">#&gt; x No manual entry exists for module r.gdal</span>
 <span class="co">#&gt; → Did you mean:</span>
@@ -113,7 +116,7 @@
 <span class="co">#&gt; ✓ Displaying module r.in.gdal in viewer</span>
 <span class="co">#&gt; Session is not interactive - viewer cannot be used</span></code></pre></div>
 <p>You can also open the page in your browser with <code>browse</code>. Your browser will then of course support links to other pages of the manual:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/man.html">browse</a></span><span class="op">(</span><span class="va">v.overlay</span><span class="op">)</span></code></pre></div>
 <p>Using the RStudio viewer pane, this is what you can expect to see:</p>
 <p><img src="reference/figures/README-screenshot.png" alt="Viewer Pane"></p>
